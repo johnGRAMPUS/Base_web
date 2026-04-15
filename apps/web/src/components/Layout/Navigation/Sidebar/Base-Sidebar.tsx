@@ -280,7 +280,14 @@ export function BaseNavigation({ isMobile = false }: { isMobile?: boolean }) {
                           >
                             <div className="flex items-center">
                               {item.icon && <Icon name={item.icon} className="mr-2 inline-block" />}
-                              <Text variant={TextVariant.CTALabelSm}>{item.label}</Text>
+                              <Text
+                                variant={TextVariant.CTALabelSm}
+                                className={classNames({
+                                  'text-[rgb(69,117,255)]': item.label === 'Base Account',
+                                })}
+                              >
+                                {item.label}
+                              </Text>
                             </div>
                             {item.label === 'Job Network' && (
                               <div className="ml-2 text-[#B1B7C3] group-hover:text-black dark:text-[#1E2025] group-hover:dark:text-white">
